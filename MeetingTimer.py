@@ -142,7 +142,7 @@ class RolesWindow(tk.Toplevel):
             self.roles_rates_list.insert(tk.END, f"{role}: £{annual_salary:.2f}/year")
 
 root = tk.Tk()
-root.title("Meeting Cost Timer")
+root.title("Meeting Cost Timer - drdompimenta.com")
 app = Application(master=root)
 app.mainloop()
 
