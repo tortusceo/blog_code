@@ -5,8 +5,8 @@ import time
 
 # Here the rates are stored as per-second values (annual salary / total seconds in a year)
 salaries = {
-    "Software Engineer": 60000 / 31536000,
-    "Project Manager": 80000 / 31536000,
+    "Software Engineer": 60000 / 7488000,
+    "Project Manager": 80000 / 7488000,
 }
 
 def get_salary(role):
@@ -126,7 +126,7 @@ class RolesWindow(tk.Toplevel):
         role = self.modify_role_entry.get().strip()
         annual_salary = float(self.modify_rate_entry.get())
         # Convert annual salary to per second salary
-        salaries[role] = annual_salary / 31536000
+        salaries[role] = annual_salary / 7488000
         self.update_roles_rates_list()
 
     def remove_role(self):
@@ -138,7 +138,7 @@ class RolesWindow(tk.Toplevel):
     def update_roles_rates_list(self):
         self.roles_rates_list.delete(0, tk.END)
         for role, rate in salaries.items():
-            annual_salary = rate * 31536000  # convert back to annual salary for displaying
+            annual_salary = rate * 7488000  # convert back to annual salary for displaying
             self.roles_rates_list.insert(tk.END, f"{role}: £{annual_salary:.2f}/year")
 
 root = tk.Tk()
